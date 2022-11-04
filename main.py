@@ -20,13 +20,13 @@ chrome_options.headless = False
 browser = webdriver.Chrome(r'chromedriver.exe', options=chrome_options)
 wait = WebDriverWait(browser, 10)
 
-tb = telebot.TeleBot(config.TOKEN)  # инициализация теле_бота
+tb = telebot.TeleBot(config.TOKEN)  # инициализация теле_бота #
 
 
 browser.get('https://sovajewels.com/catalog/braslety/bracelet-united24-azovsteel.html') #искомое
 # browser.get('https://sovajewels.com/ua/catalog/braslety/braslet-iz-belogo-zolota-story-artikul-400935710201.html') #тест урл
 count = 0
-print('start...')
+print('start...') #
 def foo():
     name_input = browser.find_element(By.CLASS_NAME, 'def-input__input')
     name_input.clear()
