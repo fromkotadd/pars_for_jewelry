@@ -20,13 +20,13 @@ chrome_options.headless = False
 browser = webdriver.Chrome(r'chromedriver.exe', options=chrome_options)
 wait = WebDriverWait(browser, 10)
 
-tb = telebot.TeleBot(config.TOKEN)  # инициализация теле_бота ### on-line commit and push!
+tb = telebot.TeleBot(config.TOKEN)  # инициализация теле_бота
 
 
-browser.get('https://sovajewels.com/catalog/braslety/bracelet-united24-azovsteel.html') ##искомое
+browser.get('https://sovajewels.com/catalog/braslety/bracelet-united24-azovsteel.html') #искомое
 # browser.get('https://sovajewels.com/ua/catalog/braslety/braslet-iz-belogo-zolota-story-artikul-400935710201.html') #тест урл
 count = 0
-print('start...') ##
+print('start...')
 def foo():
     name_input = browser.find_element(By.CLASS_NAME, 'def-input__input')
     name_input.clear()
@@ -36,7 +36,6 @@ def foo():
     phone_num_input.send_keys(f'{phone}')
     time.sleep(1)
     browser.find_element(By.CSS_SELECTOR, 'form[class="def-buy-one-click-form"]>button[class = def-button-primary]').click()
-    time.sleep(1)
 while True:
     try:
         elem = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'def-button-secondary.def-buy-one-click')))
@@ -47,7 +46,7 @@ while True:
             browser.quit()
             for r in range(100):
                 tb.send_message(config.chat_id, 'KURWA BEGI EBANII VROT!!!!\n https://sovajewels.com/catalog/braslety/bracelet-united24-azovsteel.html')  # Бот отправляет сообщения в телеграм
-                time.sleep(20)
+                time.sleep(10)
             quit()
     except selenium.common.exceptions.TimeoutException as EX:
         print(f'Product not found:\n Count: {count}\n time: {datetime.datetime.today().strftime("%H:%M:%S")}')
