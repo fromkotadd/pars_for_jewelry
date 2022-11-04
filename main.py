@@ -20,7 +20,7 @@ chrome_options.headless = False
 browser = webdriver.Chrome(r'chromedriver.exe', options=chrome_options)
 wait = WebDriverWait(browser, 10)
 
-tb = telebot.TeleBot(config.TOKEN)  # инициализация теле_бота ### on-line commit and push
+tb = telebot.TeleBot(config.TOKEN)  # инициализация теле_бота ### on-line commit and push!
 
 
 browser.get('https://sovajewels.com/catalog/braslety/bracelet-united24-azovsteel.html') ##искомое
