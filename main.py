@@ -25,7 +25,6 @@ tb = telebot.TeleBot(config.TOKEN)  # инициализация теле_бот
 
 
 browser.get('https://sovajewels.com/catalog/braslety/bracelet-united24-azovsteel.html') #искомое
-# browser.get('https://sovajewels.com/ua/catalog/braslety/braslet-iz-belogo-zolota-story-artikul-400935710201.html') #тест урл
 count = 0
 print('start...')
 def foo():
@@ -46,7 +45,7 @@ while True:
             foo()
             browser.quit()
             for r in range(100):
-                tb.send_message(config.chat_id, 'KURWA BEGI EBANII VROT!!!!\n https://sovajewels.com/catalog/braslety/bracelet-united24-azovsteel.html')  # Бот отправляет сообщения в телеграм
+                tb.send_message(config.chat_id, 'RAN!!!!\n https://sovajewels.com/catalog/braslety/bracelet-united24-azovsteel.html')  # Бот отправляет сообщения в телеграм
                 time.sleep(10)
             quit()
     except selenium.common.exceptions.TimeoutException as EX:
